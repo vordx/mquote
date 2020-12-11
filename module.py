@@ -101,7 +101,7 @@ class mQuotesMod(loader.Module):
 										  lambda: self.strings["quote_limit_cfg_doc"],
 										  "MAX_WIDTH", 384,
 										  lambda: self.strings["max_width_cfg_doc"],
-										  "SCALE_FACTOR", 5.5,
+										  "SCALE_FACTOR", 5,
 										  lambda: self.strings["scale_factor_cfg_doc"],
 										  "SQUARE_AVATAR", False,
 										  lambda: self.strings["square_avatar_cfg_doc"],
@@ -117,7 +117,7 @@ class mQuotesMod(loader.Module):
 										  lambda: self.strings["message_radius_cfg_doc"],
 										  "PICTURE_BORDER_RADIUS", 8,
 										  lambda: self.strings["picture_radius_cfg_doc"],
-										  "BACKGROUND_COLOR", "#0a061a",
+										  "BACKGROUND_COLOR", "#162330",
 										  lambda: self.strings["background_color_cfg_doc"])
 
 	async def client_ready(self, client, db):
@@ -125,7 +125,7 @@ class mQuotesMod(loader.Module):
 
 	@loader.unrestricted
 	@loader.ratelimit
-	async def quotecmd(self, message):
+	async def mquotecmd(self, message):
 		""".quote <reply> - quote a message"""
 		if not self.config["SILENT_PROCESSING"]:
 			await utils.answer(
